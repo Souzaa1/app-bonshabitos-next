@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DayStates from "../.next/components/Date_State";
+import DayStates from "../components/Date_State";
 import Link from "next/link";
 
 export default function Home() {
