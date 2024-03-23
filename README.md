@@ -26,13 +26,6 @@
 
 
 
-## 🎨 Design Sugerido
-Temos uma sugestão de design no Figma. Mas sinta-se livre para utilizar a criatividade e fazer o seu próprio design.
-
-🔗 [Link do Figma](https://www.figma.com/file/suvmja6210ggZOO6Cpehjl/Mini-Projetos---Codante.io?type=design&node-id=1533-149&mode=design&t=tptjmPrWwZzLsv9Z-0)
-
-![Group 20](https://github.com/codante-io/mp-gerenciador-habitos-next/assets/6475893/72c62cf3-f8da-4540-923e-0b064e2e0961)
-
 
 ## 👉🏽 Sobre esse mini-projeto
 ### Tecnologias sugeridas
