@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${dosis.variable} flex items-center flex-col mt-10 bg-neutral-600`}>
+      <body className={`${poppins.variable} ${dosis.variable} flex items-center flex-col mt-10 bg-neutral-900`}>
         <Image src="/images/logo.png" width={150} height={150} alt="Logo Meta - Diária"/>
         
         {children}</body>

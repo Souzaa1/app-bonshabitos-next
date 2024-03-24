@@ -1,6 +1,8 @@
 import Image from "next/image";
 
-export default function DayStates({ day }: { day: boolean | undefined }) {
+export default function DayStates({ 
+    day 
+}: { day: boolean | undefined }) {
 
     let image: [string, string, number?] = ["/images/circle.svg", "Circle mark", 24];
     

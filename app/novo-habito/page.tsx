@@ -1,15 +1,21 @@
+import { kv } from "@vercel/kv";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default function NovoHabito() {
-    
+
     async function newHabit(formData: FormData) {
         "use server"
-         const habit = formData.get("habit");
-
-    };
-    
-    
-    return (
+        const habit = formData.get("habit");
+        await kv.hset("habits", { [ habit as string ]: {} });
         
+        revalidatePath("/");
+        redirect("/");
+    };
+
+
+    return (
+
         <main className="container relative flex flex-col gap-10 px-4 pt-16">
             <h1 className="text-4xl font-bold text-black font-display text-center mt-20">
                 Novo Hábito
