@@ -17,11 +17,11 @@ export default function NovoHabito() {
     return (
 
         <main className="container relative flex flex-col gap-10 px-4 pt-16">
-            <h1 className="text-4xl font-bold text-black font-display text-center mt-20">
+            <h1 className="text-4xl font-bold text-white font-display text-center mt-20">
                 Novo Hábito
             </h1>
             <form action={newHabit} className="flex flex-col gap-4 mt-4">
-                <span className="text-lg text-black font-sans">Nome do hábito</span>
+                <span className="text-lg text-white font-sans">Nome do hábito</span>
                 <input
                     type="text"
                     name="habit"

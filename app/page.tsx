@@ -1,7 +1,8 @@
 import DayStates from "../components/Date_State";
+import DeleteButton from "@/components/Delete_Button";
 import Link from "next/link";
 import { kv } from "@vercel/kv";
-import DeleteButton from "@/components/Delete_Button";
+import { deleteHabit } from "@/app/actions";
 
 export type Habits = {
   [habit: string]: Record<string, boolean>;
@@ -26,13 +27,15 @@ export default async function Home() {
 
 
   return (
+
     <main className="container relative flex flex-col gap-10 px-4 pt-16">
-      {habits === null || Object.keys(habits).length === 0 && (
-        <h1 className="mt-20 text-4xl font-light text-black font-display text-center">
-          Você não tem nenhum hábito cadastrado ainda.
-          Adicione um hábito.
-        </h1>
-      )}
+      {habits === null ||
+        (Object.keys(habits).length === 0 && (
+          <h1 className="mt-20 text-4xl font-light text-white font-display text-center">
+            Você não tem nenhum hábito cadastrado ainda.
+            Adicione um hábito.
+          </h1>
+        ))}
       {
         habits !== null &&
         Object.entries(habits).map(([habit, habitStreak]) => (
@@ -42,7 +45,7 @@ export default async function Home() {
               <span className="text-xl text-white font-bold font-sans">
                 {habit}
               </span>
-              
+
               <DeleteButton
                 habit={habit}
               />
@@ -59,13 +62,16 @@ export default async function Home() {
                     <DayStates day={habitStreak[lastSevenDays[index]]} />
 
                   </div>
+
                 ))}
-                <Link href="novo-habito" className="fixed text-center bottom-10 w-2/3 left-1/2 -translate-x-1/2 text-neutral-900 bg-[#45edad] font-display font-regular text-2xl p-2 rounded-md">Novo Habito</Link>
               </section>
             </Link>
           </div>
-        )
-        )}
+        ))}
+      <Link href="novo-habito"
+        className="fixed text-center bottom-10 w-2/3 left-1/2 -translate-x-1/2 text-neutral-900 bg-[#45edad] font-display font-regular text-2xl p-2 rounded-md">
+        Novo Hábito
+      </Link>
     </main>
   );
 }
